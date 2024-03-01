@@ -2,10 +2,11 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Menu from "./components/Menu";
-import "./App.css";
 import Lodging from "./pages/Lodging";
 import About from "./pages/About";
 import Footer from "./components/Footer";
+import "./css/app.scss";
+import Card from "./components/Card";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/lodging" element={<Lodging  />} />
       <Route path="/about" element={<About />} />
       </Routes>
+      <Card/>
       <Footer />
     </>
   );
