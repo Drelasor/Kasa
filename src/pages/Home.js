@@ -11,8 +11,8 @@ return(
         <div className="infocard">
       {data.map(appart => (
          <Card key={appart.id}>
-         <Appartment photoUrl={appart.cover} titre={appart.title}></Appartment>
-       </Card>
+            <Appartment photoUrl={appart.cover} titre={appart.title}></Appartment>
+         </Card>
       ))}
      </div>
     </div>
