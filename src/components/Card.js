@@ -1,9 +1,10 @@
-
-    const Card = ({children}) =>{
-
+const Card = ({photoUrl, titre}) => {
     return(
         <div className="card">
-            {children}
+            <figure>
+                <img src={photoUrl} alt="Appartement"/>
+                <figcaption>{titre}</figcaption>
+            </figure>
         </div>
     )
 }
