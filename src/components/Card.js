@@ -1,10 +1,8 @@
-const Card = ({photoUrl, titre}) => {
+const Card = ({imgUrl, title}) => {
     return(
         <div className="card">
-            <figure>
-                <img src={photoUrl} alt="Appartement"/>
-                <figcaption>{titre}</figcaption>
-            </figure>
+                <img src={imgUrl} alt="Appartement"/>
+                <div className="title">{title}</div>
         </div>
     )
 }
