@@ -1,7 +1,8 @@
+import logo from "../asset/svg/logo_bw.svg"
 export default function Footer(){
     return(
         <div className="footer">
-                <img src="/logo.svg"></img>
+                <img src={logo}></img>
                 <p>ceci est le footer</p>
         </div>
     )}
