@@ -1,9 +1,11 @@
-const Card = ({ imgUrl, title }) => {
+import { Link } from 'react-router-dom';
+
+const Card = ({ appart }) => {
   return (
-    <div className="card">
-      <img src={imgUrl} alt="Appartement" />
-      <div className="title">{title}</div>
-    </div>
+    <Link to={`/appart/${appart.id}`} className="card">
+      <img src={appart.cover} alt="Appartement" />
+      <div className="title">{appart.title}</div>
+    </Link>
   );
 };
 

@@ -9,7 +9,7 @@ export default function Home() {
       <Banner bannerImg={homeImg} bannerTxt="Chez vous, partout et ailleurs" />
       <div className="infocard">
         {data.map((appart) => (
-          <Card key={appart.id} imgUrl={appart.cover} title={appart.title} />
+          <Card key={appart.id} appart={appart}/>
         ))}
       </div>
     </div>
