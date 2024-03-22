@@ -3,6 +3,5 @@ export default function Footer(){
     return(
         <div className="footer">
                 <img src={logo}></img>
-                <p>ceci est le footer</p>
         </div>
     )}
