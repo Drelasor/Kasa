@@ -1,18 +1,30 @@
-import { useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import vector from "../asset/png/vector.png";
 export default function Collapse({ appart }) {
-  const [active,setActive] = useState(false)
+  const CollapseDiv = useRef(null);
+  const [close, setClose] = useState(true);
 
-  const handleToggle = () =>{
-   setActive(!active)
-  }
+  const handleToggle = () => {
+    setClose(!close);
+  };
+
+  let CollapseDivOffsetHeight = useMemo(() => {
+    return CollapseDiv.current?.scrollHeight ?? 0;
+  }, [CollapseDiv.current]);
+
   return (
-     <div className={`accordion ${active && "active"}`}>
-      <div className="title" onClick={handleToggle}>
+    <div className={`collapse ${close ? "close" : ""}`}>
+      <div className="collapse_title" onClick={handleToggle}>
         <h2>Description</h2>
         <img src={vector} alt="fleche" className="arrow"></img>
-        </div>
-      <div className="content">{appart.description}</div>
-     </div>
+      </div>
+      <div
+        ref={CollapseDiv}
+        className="content"
+        style={{ maxHeight: `${CollapseDivOffsetHeight}px` }}
+      >
+        {appart.description}
+      </div>
+    </div>
   );
 }
