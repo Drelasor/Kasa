@@ -1,19 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import vector from "../asset/png/vector.png";
 
+export const Slider = ({ apparts }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
-const Slider = ({ images }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const updateIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = apparts.length;
+    } else if (newIndex >= apparts.length) {
+      newIndex = 0
+    }
 
-  const nextSlide = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setActiveIndex(newIndex);
   };
 
-  const prevSlide = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-}
+  return (
+    <div className="slider">
+      <div className="slider-arrows">
+        <img
+          className="left-arrow"
+          src={vector}
+          onClick={() => {
+            updateIndex(activeIndex - 1);
+          }}
+        ></img>
+        <img
+          className="right-arrow"
+          src={vector}
+          onClick={() => {
+            updateIndex(activeIndex + 1);
+          }}
+        ></img>
+      </div>
+      <div
+        className="inner"
+        style={{ transform: `translate(-${activeIndex * 100}%)` }}
+      >
+        {apparts.map((appart) => {
+          return (
+            <img src={appart} alt="image slider" className="picture"></img>
+          );
+        })}
+      </div>
+    </div>
+  );
+};

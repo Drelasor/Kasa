@@ -1,0 +1,43 @@
+.slider {
+    position: relative;
+    width: 50%;
+    height: 415px;
+    border-radius: 25px;
+    overflow: hidden;
+
+
+    .inner {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s;
+    }
+
+    .picture {
+        width: 100%;
+        height: 100%;
+        padding: 0 20px 0 20px;
+    }
+
+    .slider-arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 1;
+
+    }
+    .left-arrow{
+        transform: rotate(90deg);
+        cursor : pointer
+        
+    }
+
+    .right-arrow{
+        transform: rotate(-90deg);
+        cursor: pointer;
+    }
+
+}
