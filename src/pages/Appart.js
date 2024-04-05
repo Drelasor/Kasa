@@ -20,10 +20,7 @@ export default function Appart() {
         </div>
       </div>
       <div className="appart-rating">
-    {/*   {.map((appart) => (
-          <Tag value={appart.Tag}/>
-        ))}
-        <Rating rating={appart.rating} /> */}
+        <Rating rating={appart.rating} />
       </div>
 
       <p>{appart.location}</p>
