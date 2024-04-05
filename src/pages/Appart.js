@@ -19,11 +19,17 @@ export default function Appart() {
           <img className="circle" src={appart.host.picture} alt="proprio"></img>
         </div>
       </div>
-      <div className="appart-rating">
-        <Rating rating={appart.rating} />
-      </div>
-
       <p>{appart.location}</p>
+      <div className="tag-rating">
+        <div className="appart-tag">
+          {appart.tags.map((tag) => (
+            <Tag value={tag} />
+          ))}
+        </div>
+        <div className="appart-rating">
+          <Rating rating={appart.rating} />
+        </div>
+      </div>
       <div className="appart-collapse">
         <Collapse appart={appart} />
         <Collapse appart={appart} />

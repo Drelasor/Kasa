@@ -12,7 +12,18 @@
 
     .appart-collapse {
         display: flex;
+        justify-content: space-between;
     }
+
+    .tag-rating{
+        display: flex;
+        justify-content: space-between;
+
+        & > * {
+           display: flex
+        }
+    }
+    
 
 
     .circle {
