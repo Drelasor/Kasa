@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import apparts from "../appart.json";
 import Collapse from "../components/Collapse";
 import { Slider } from "../components/Slider";
+import Rating from "../components/Rating";
+import Tag from "../components/Tag";
 
 export default function Appart() {
   const { id } = useParams();
@@ -9,12 +11,26 @@ export default function Appart() {
 
   return (
     <div className="appart">
-      <h1>{appart.title}</h1>
-      <Slider apparts = {appart.pictures}/>
+      <Slider apparts={appart.pictures} />
+      <div className="appart-title">
+        <h1>{appart.title}</h1>
+        <div className="appart-host">
+          <p>{appart.host.name}</p>
+          <img className="circle" src={appart.host.picture} alt="proprio"></img>
+        </div>
+      </div>
+      <div className="appart-rating">
+    {/*   {.map((appart) => (
+          <Tag value={appart.Tag}/>
+        ))}
+        <Rating rating={appart.rating} /> */}
+      </div>
+
       <p>{appart.location}</p>
-      <p>{appart.host.name}</p>
-      <img src={appart.host.picture} alt="proprio"></img>
-      <Collapse appart ={appart}/>
+      <div className="appart-collapse">
+        <Collapse appart={appart} />
+        <Collapse appart={appart} />
+      </div>
     </div>
   );
 }

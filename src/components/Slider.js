@@ -5,13 +5,7 @@ export const Slider = ({ apparts }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const updateIndex = (newIndex) => {
-    if (newIndex < 0) {
-      newIndex = apparts.length;
-    } else if (newIndex >= apparts.length) {
-      newIndex = 0
-    }
-
-    setActiveIndex(newIndex);
+    setActiveIndex((newIndex + apparts.length) % apparts.length);
   };
 
   return (
@@ -38,7 +32,9 @@ export const Slider = ({ apparts }) => {
       >
         {apparts.map((appart) => {
           return (
-            <img src={appart} alt="image slider" className="picture"></img>
+            <div className="picture">
+              <img src={appart} alt="image slider" className="picture"></img>
+            </div>
           );
         })}
       </div>
