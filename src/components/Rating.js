@@ -6,9 +6,9 @@ export default function Rating ({ rating }) {
   const stars = [];
   for (let i = 0; i < 5; i++) {
     if (i < rating) {
-      stars.push(<img src={starfull}></img>); 
+      stars.push(<img key={i} src={starfull} alt={`Star ${i + 1}`} />);
     } else {
-      stars.push(<img src={starblank}></img>); 
+      stars.push(<img key={i} src={starblank} alt={`Blank Star ${i + 1}`} />);
     }
   }
 

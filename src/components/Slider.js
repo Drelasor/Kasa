@@ -17,23 +17,23 @@ export const Slider = ({ apparts }) => {
           onClick={() => {
             updateIndex(activeIndex - 1);
           }}
-        ></img>
+        />
         <img
           className="right-arrow"
           src={vector}
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
-        ></img>
+        />
       </div>
       <div
         className="inner"
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
-        {apparts.map((appart) => {
+        {apparts.map((appart,index) => {
           return (
-            <div className="picture">
-              <img src={appart} alt="image slider" className="picture"></img>
+            <div key={index} className="picture">
+              <img src={appart} alt="image slider" className="picture"/>
             </div>
           );
         })}

@@ -1,36 +1,50 @@
-  .collapse {
-    margin: 15px;
-    width: 50%;
-    border-radius: 5px;
-    background: rgba(255, 96, 96, 1);
-}
+   .collapse {
+       margin: 15px;
+       width: 50%;
+       border-radius: 5px;
+       background: rgba(255, 96, 96, 1);
+       overflow: hidden;
+   }
 
-.collapse_title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    margin: 10px;
-}
+   .collapse-button {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       color: white;
+       margin: 10px;
+   }
 
-.collapse_title h2 {
-    margin: 0;
-}
+   .collapse-button h2 {
+       margin: 0;
+   }
 
-.arrow {
-    transform: rotate(0deg);
-    transition: transform 0.8s; 
-}
+   .arrow {
+       transform: rotate(0deg);
+       transition: transform 0.8s;
+   }
 
- .arrow.close {
-    transform: rotate(180deg);
-}
+   .arrow.close {
+       transform: rotate(180deg);
+   }
 
-.content {
-    border-top: none;
-    overflow: hidden;
-    background-color: rgba(246, 246, 246, 0.45);
-    transition: max-height 0.5s ease-in-out;
-}
+   .content {
+       border-top: none;
+       background-color: rgba(246, 246, 246);
+      /*  transition: max-height 0.5s ease-in-out; */
 
 
+   }
+
+   .animation {
+       animation: slideIn 3s;
+   }
+
+   @keyframes slideIn {
+       from {
+           margin-top: -250px;
+       }
+
+       to {
+           margin-top: 10px;
+       }
+   }

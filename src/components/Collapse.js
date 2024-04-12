@@ -1,4 +1,31 @@
-import { useMemo, useRef, useState } from "react";
+ import {useState } from "react";
+import vector from "../asset/png/vector.png";
+export default function Collapse({ title, content }) {
+  const [close, setClose] = useState(true);
+
+  // change etat
+  const handleToggle = () => {
+    setClose(!close);
+  };
+  return (
+    <div className="collapse">
+      <div className="collapse-button" onClick={handleToggle}>
+        <h2>{title}</h2>
+        <img src={vector} alt="fleche" className={`arrow ${close ? "close" : ""}`}></img>
+      </div>
+      <div
+        className={close ? `content animation` : 'content'}
+        // style={{
+        //   maxHeight: `${close ? 0 : CollapseDivOffsetHeight}px`,
+        // }}
+      >
+       {content}
+      </div>
+    </div>
+  );
+}
+
+/* import { useMemo, useRef, useState } from "react";
 import vector from "../asset/png/vector.png";
 export default function Collapse({ title, content }) {
   const CollapseDiv = useRef(null);
@@ -31,5 +58,5 @@ export default function Collapse({ title, content }) {
     </div>
   );
 }
+ */
 
-//<div className={`collapse ${close ? "close" : ""}`}>

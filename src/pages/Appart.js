@@ -4,10 +4,17 @@ import Collapse from "../components/Collapse";
 import { Slider } from "../components/Slider";
 import Rating from "../components/Rating";
 import Tag from "../components/Tag";
+import { useNavigate } from "react-router-dom";
 
 export default function Appart() {
   const { id } = useParams();
   const appart = apparts.find((appart) => appart.id === id);
+
+  const navigate = useNavigate()
+
+    if (!appart){
+       return navigate(window.origin + "/error")
+    } 
 
   return (
     <div className="appart">
@@ -22,8 +29,8 @@ export default function Appart() {
       <p>{appart.location}</p>
       <div className="tag-rating">
         <div className="appart-tag">
-          {appart.tags.map((tag) => (
-            <Tag value={tag} />
+          {appart.tags.map((tag, index) => (
+            <Tag key={index} value={tag} />
           ))}
         </div>
         <div className="appart-rating">
