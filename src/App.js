@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import Appart from "./pages/Appart"
+import Error from "./pages/Error"
 import "./css/app.scss";
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/appart/:id" element={<Appart />} />
         <Route path="/about" element={<About />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
       <Footer/>
     </>

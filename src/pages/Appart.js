@@ -31,8 +31,8 @@ export default function Appart() {
         </div>
       </div>
       <div className="appart-collapse">
-        <Collapse appart={appart} />
-        <Collapse appart={appart} />
+        <Collapse title={"Description"} content={appart.description} />
+        <Collapse title={"Equipement"} content={appart.equipments} />
       </div>
     </div>
   );

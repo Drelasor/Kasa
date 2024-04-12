@@ -2,9 +2,17 @@
     background-color: black;
     height: 209px;
     padding: 50px;
+
+    img{
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    p{
+        font-family: Montserrat;
+        color: white;
+        text-align: center;
+    }
 }
 
-.footer img{
-    display: block;
-    margin: 0 auto;
-}
