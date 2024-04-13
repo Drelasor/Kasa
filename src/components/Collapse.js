@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import vector from "../asset/png/vector.png";
 
 export default function Collapse({ title, content }) {
@@ -19,7 +19,7 @@ export default function Collapse({ title, content }) {
           className={`arrow ${close ? "close" : ""}`}
         ></img>
       </div>
-      <div className={`content-${close ? "close" : "open"}`}>
+      <div className={`content ${close ? "close" : ""}`}>
         <p className="text-content">{content}</p>
       </div>
     </div>
