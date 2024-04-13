@@ -34,13 +34,14 @@
     background-color: rgba(246, 246, 246);
     z-index: 1;
     position: relative;
-    transition: transform 0.8s;
     transform: translateY(0);
+    transition: all 0.8s;
+    max-height: 999999px;
 }
 
 .content.close {
     max-height: 0;
-    transition: transform 0.8s;
+    transition: all 0.8s;
     transform: translateY(-100%);
 }
 

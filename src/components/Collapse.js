@@ -1,13 +1,13 @@
-import { useState} from "react";
+import {useState } from "react";
 import vector from "../asset/png/vector.png";
 
 export default function Collapse({ title, content }) {
   const [close, setClose] = useState(true);
 
-  // change etat
   const handleToggle = () => {
     setClose(!close);
   };
+
 
   return (
     <div className="collapse">
