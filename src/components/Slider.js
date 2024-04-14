@@ -26,6 +26,9 @@ export const Slider = ({ apparts }) => {
           }}
         />
       </div>
+      <div className="slider-index">
+       <p>{activeIndex+1}/{apparts.length}</p> 
+      </div>
       <div
         className="inner"
         style={{ transform: `translate(-${activeIndex * 100}%)` }}

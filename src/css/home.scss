@@ -1,8 +1,19 @@
-.infocard{
+.infocard {
     margin: auto;
-    width: 1240px;
+    max-width: 1240px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     background: rgba(246, 246, 246, 1);
-    border-radius: 25px ;
+    border-radius: 25px;
+}
+
+
+@media (max-width: 900px) {
+
+    .infocard {
+        background: none;
+
+    }
+
 }

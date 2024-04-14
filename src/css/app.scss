@@ -10,3 +10,12 @@
 @import './tag.scss';
 @import './error.scss';
 @import './about.scss';
+
+body,html,#root{
+    height: 100%;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+}

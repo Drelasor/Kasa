@@ -1,23 +1,42 @@
 .error {
     text-align: center;
+    flex-grow: 1;
 
-*{
-    font-family: Montserrat;
-}    
+    * {
+        font-family: Montserrat;
+    }
 
     h1 {
         margin: 0;
         font-size: 288px;
-        color:rgba(255, 96, 96, 1); 
+        color: rgba(255, 96, 96, 1);
     }
 
-    p{
+    p {
         font-size: 36px;
-        color:rgba(255, 96, 96, 1); 
+        color: rgba(255, 96, 96, 1);
     }
 
-    a{
+    a {
         color: black;
-        font-size:18px;
+        font-size: 18px;
     }
+}
+
+
+@media (max-width: 900px) {
+    .error {
+        h1 {
+            font-size: 200px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .error {
+        h1 {
+            font-size: 150px;
+        }
+    }
+
 }

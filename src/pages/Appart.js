@@ -1,60 +1,71 @@
-import { useParams, useNavigate } from "react-router-dom"
-import apparts from "../appart.json"
-import Collapse from "../components/Collapse"
-import { Slider } from "../components/Slider"
-import Rating from "../components/Rating"
-import Tag from "../components/Tag"
-import { useEffect, useState } from "react"
+import { useParams, useNavigate } from "react-router-dom";
+import apparts from "../appart.json";
+import Collapse from "../components/Collapse";
+import { Slider } from "../components/Slider";
+import Rating from "../components/Rating";
+import Tag from "../components/Tag";
+import { useEffect, useState } from "react";
 
 export default function Appart() {
-  const [appart, setAppart] = useState(null)
-  const { id } = useParams()
+  const [appart, setAppart] = useState(null);
+  const { id } = useParams();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const pickedAppart = apparts.find((appart) => appart.id === id)
+    const pickedAppart = apparts.find((appart) => appart.id === id);
 
     if (!pickedAppart) {
-      navigate("/error")
+      navigate("/error");
     } else {
-      setAppart(pickedAppart)
+      setAppart(pickedAppart);
     }
-  }, [id])
+  }, [id]);
 
   return (
     <>
       {appart && (
         <div className="appart">
           <Slider apparts={appart.pictures} />
-          <div className="appart-title">
-            <h1>{appart.title}</h1>
-            <div className="appart-host">
-              <p>{appart.host.name}</p>
-              <img
-                className="circle"
-                src={appart.host.picture}
-                alt="proprio"
-              ></img>
+          <div className="main">
+            <div className="txt-section">
+              <div className="left">
+                <h1>{appart.title}</h1>
+                <p className="localisation">{appart.location}</p>
+                <div className="appart-tag">
+                  {appart.tags.map((tag, index) => (
+                    <Tag key={index} value={tag} />
+                  ))}
+                </div>
+              </div>
+              <div className="right">
+                <div className="appart-host">
+                  <p>{appart.host.name}</p>
+                  <img
+                    className="circle"
+                    src={appart.host.picture}
+                    alt="proprio"
+                  ></img>
+                </div>
+                <Rating rating={appart.rating} />
+              </div>
             </div>
-          </div>
-          <p>{appart.location}</p>
-          <div className="tag-rating">
-            <div className="appart-tag">
-              {appart.tags.map((tag, index) => (
-                <Tag key={index} value={tag} />
-              ))}
+
+            <div className="appart-collapse">
+              <Collapse title={"Description"} width="50%">
+                <p>{appart.description}</p>
+              </Collapse>
+              <Collapse title={"Equipement"} width="50%">
+                <ul>
+                  {appart.equipments.map((elem, index) => (
+                    <li key={index}>{elem}</li>
+                  ))}
+                </ul>
+              </Collapse>
             </div>
-            <div className="appart-rating">
-              <Rating rating={appart.rating} />
-            </div>
-          </div>
-          <div className="appart-collapse">
-            <Collapse title={"Description"} content={appart.description} />
-            <Collapse title={"Equipement"} content={appart.equipments} />
           </div>
         </div>
       )}
     </>
-  )
+  );
 }
