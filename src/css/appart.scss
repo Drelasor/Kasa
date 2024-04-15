@@ -10,10 +10,12 @@
     .appart-collapse {
         display: flex;
         align-items: flex-start;
+        gap: 10px;
     }
 
     .appart-tag {
         display: flex;
+        gap: 10px;
     }
 
     .main {
@@ -66,6 +68,10 @@
         width: 100px;
         height: 100px;
         border-radius: 50%;
+    }
+
+    .equipment-list{
+        list-style-type: none;
     }
 
 }

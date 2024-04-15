@@ -58,7 +58,7 @@ export default function Appart() {
                 <p>{appart.description}</p>
               </Collapse>
               <Collapse title={"Equipement"} width="50%">
-                <ul>
+                <ul className="equipment-list">
                   {appart.equipments.map((elem, index) => (
                     <li key={index}>{elem}</li>
                   ))}

@@ -11,12 +11,12 @@ export default function Collapse({ title, children, width, margin }) {
 
   return (
     <div className="collapse" style={{ width: width, margin: margin }}>
-      <div className="collapse-button" onClick={handleToggle}>
+      <div className="collapse-button" >
         <h2>{title}</h2>
         <img
           src={vector}
           alt="fleche"
-          className={`arrow ${close ? "close" : ""}`}
+          className={`arrow ${close ? "close" : ""}`} onClick={handleToggle}
         ></img>
       </div>
       <div className={`content ${close ? "close" : ""}`}>

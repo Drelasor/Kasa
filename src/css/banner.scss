@@ -44,7 +44,36 @@
 
   .banner {
     h1 {
+      -webkit-text-stroke: initial;
+      font-family: Montserrat;
       font-size: 40px;
+    }
+
+  }
+
+
+}
+
+@media (max-width: 600px) {
+
+  .banner {
+    h1 {
+      font-size: 30px;
+    }
+
+  }
+
+
+}
+
+@media (max-width: 375px) {
+
+  .banner {
+    height: 100px;
+
+    h1 {
+      font-size: 15px;
+
     }
 
   }

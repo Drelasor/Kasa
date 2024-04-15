@@ -21,3 +21,30 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .menu{
+        .nav-menu {
+            a {
+                font-size: 15px;
+            }
+        }
+        img{
+            width: 100px;
+            }
+
+    }
+   
+}
+
+@media (max-width: 375px) {
+    .menu{
+        .nav-menu {
+            a {
+                font-size: 10px;
+            }
+        }
+
+    }
+   
+}
