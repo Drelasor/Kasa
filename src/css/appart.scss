@@ -1,6 +1,7 @@
 .appart {
     margin: auto;
     max-width: 1240px;
+    flex-grow: 1;
 
     &>* {
         font-family: Montserrat;
@@ -33,7 +34,7 @@
             font-size: 36px;
         }
 
-        p{
+        p {
             margin-bottom: 10px;
 
         }
@@ -72,6 +73,10 @@
 
 @media (max-width: 900px) {
 
+    .appart {
+        max-width: 600px;
+    }
+
     .txt-section {
         flex-direction: column;
     }
@@ -89,6 +94,14 @@
 
     .collapse {
         width: 100% !important;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+    .appart {
+        max-width: 400px;
     }
 
 }

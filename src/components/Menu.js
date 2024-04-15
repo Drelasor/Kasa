@@ -8,8 +8,12 @@ export default function Menu() {
         <img src={logo} alt="logo couleur rouge"></img>
       </div>
       <div className="nav-menu">
-        <NavLink to="/" >Accueil</NavLink>
-        <NavLink to="/about">A propos</NavLink>
+        <NavLink to="/" activeClassName="active">
+          Accueil
+        </NavLink>
+        <NavLink to="/about" activeClassName="active">
+          A propos
+        </NavLink>
       </div>
     </div>
   );

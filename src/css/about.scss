@@ -1,5 +1,27 @@
-.about{
+.about {
    margin: 0 auto;
    max-width: 1240px;
    flex-grow: 1;
+}
+
+
+@media (max-width: 1240px) {
+   .about {
+      max-width: 900px;
+   }
+}
+
+
+@media (max-width: 900px) {
+   .about {
+      max-width: 600px;
+   }
+}
+
+
+@media (max-width: 500px) {
+   .about {
+       max-width: 400px;
+   }
+
 }

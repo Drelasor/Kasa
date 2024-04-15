@@ -5,6 +5,7 @@ import { Slider } from "../components/Slider";
 import Rating from "../components/Rating";
 import Tag from "../components/Tag";
 import { useEffect, useState } from "react";
+import Menu from "../components/Menu"
 
 export default function Appart() {
   const [appart, setAppart] = useState(null);
@@ -26,6 +27,7 @@ export default function Appart() {
     <>
       {appart && (
         <div className="appart">
+          <Menu />
           <Slider apparts={appart.pictures} />
           <div className="main">
             <div className="txt-section">

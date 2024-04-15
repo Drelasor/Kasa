@@ -1,9 +1,11 @@
 import Collapse from "../components/Collapse";
 import Banner from "../components/Banner";
 import AboutImg from "../asset/svg/cover-about.svg";
+import Menu from "../components/Menu"
 export default function About() {
   return (
     <div className="about">
+      <Menu />
       <Banner bannerImg={AboutImg} />
       <div className="collapse-about">
         <Collapse title={"Fiabilité"} width="80%" margin="15px auto">

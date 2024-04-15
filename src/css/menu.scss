@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1240px;
+    max-width: 1240px;
     margin: 15px auto;
 
 
@@ -13,6 +13,11 @@
             text-decoration: none;
             color: black;
             font-size: 24px;
+        }
+
+        .active {
+            // Styles pour le lien actif
+            border-bottom: 2px solid black; // Soulignement bleu
         }
     }
 }
