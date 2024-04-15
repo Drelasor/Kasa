@@ -70,7 +70,7 @@
         border-radius: 50%;
     }
 
-    .equipment-list{
+    .equipment-list {
         list-style-type: none;
     }
 
@@ -81,26 +81,27 @@
 
     .appart {
         max-width: 600px;
+
+        .txt-section {
+            flex-direction: column;
+        }
+
+        .txt-section .right {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        .appart-collapse {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .collapse {
+            width: 100% !important;
+        }
     }
 
-    .txt-section {
-        flex-direction: column;
-    }
-
-    .txt-section .right {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-    }
-
-    .appart-collapse {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .collapse {
-        width: 100% !important;
-    }
 
 }
 
