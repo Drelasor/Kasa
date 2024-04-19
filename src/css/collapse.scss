@@ -13,14 +13,15 @@
         padding: 10px;
         z-index: 5;
         position: relative;
-    }
 
-    .collapse-button h2 {
-        font-family: montserrat;
-        margin: 0;
-        font-size: 18px;
-        font-weight: 700;
-    }
+            h2 {
+                font-family: montserrat;
+                margin: 0;
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+ 
 
     .arrow {
         transform: rotate(0deg);

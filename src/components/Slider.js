@@ -8,6 +8,25 @@ export const Slider = ({ apparts }) => {
     setActiveIndex((newIndex + apparts.length) % apparts.length);
   };
 
+  if (apparts.length === 1) {
+    return (
+      <div className="slider">
+        <div
+          className="inner"
+          style={{ transform: `translate(-${activeIndex * 100}%)` }}
+        >
+          {apparts.map((appart, index) => {
+            return (
+              <div key={index} className="picture">
+                <img src={appart} alt="image slider" className="picture" />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="slider">
       <div className="slider-arrows">
@@ -27,16 +46,18 @@ export const Slider = ({ apparts }) => {
         />
       </div>
       <div className="slider-index">
-       <p>{activeIndex+1}/{apparts.length}</p> 
+        <p>
+          {activeIndex + 1}/{apparts.length}
+        </p>
       </div>
       <div
         className="inner"
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
-        {apparts.map((appart,index) => {
+        {apparts.map((appart, index) => {
           return (
             <div key={index} className="picture">
-              <img src={appart} alt="image slider" className="picture"/>
+              <img src={appart} alt="image slider" className="picture" />
             </div>
           );
         })}
