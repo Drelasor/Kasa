@@ -63,6 +63,23 @@
 
 }
 
+
+@media (max-width: 500px) {
+    .home {
+        max-width: 400px;
+
+        .infocard {
+            background: none;
+
+        }
+
+    }
+
+
+}
+
+
+
 @media (max-width: 375px) {
 
     .home {
